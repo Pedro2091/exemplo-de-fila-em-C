@@ -38,7 +38,7 @@ int desenfileirar(){
 
 int vazia(){
 
-  if(ultimaPosicaoVazia = 0){
+  if(ultimaPosicaoVazia == 0){
     return 1;
   }else{
     return 0;
@@ -47,8 +47,8 @@ int vazia(){
 }
 
 int cheia(){
-
-  if(ultimaPosicaoVazia = TAM_FILA){
+  
+  if(ultimaPosicaoVazia == TAM_FILA){
     return 1;
   }else{
     return 0;
