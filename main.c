@@ -16,7 +16,7 @@ int main(void) {
 
   exibir();
 
-  system("pause");
+  esvaziarLista();
 
   return 0;
 }

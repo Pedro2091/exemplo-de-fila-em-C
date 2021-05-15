@@ -8,32 +8,42 @@ int fila[TAM_FILA], ultimaPosicaoVazia=0;
 
 void enfileirar(int valor){
 
-  fila[ultimaPosicaoVazia] = valor;
-  ultimaPosicaoVazia++;
-
+  if(!cheia()){
+    fila[ultimaPosicaoVazia] = valor;
+    ultimaPosicaoVazia++;
+  }else{
+    printf("Esta lista esta cheia");
+  }
 
 }
 
 void exibir(){
 
-  for(int i=0; i<ultimaPosicaoVazia; i++){
-    printf("%i\n", fila[i]);
+  if(!vazia()){
+    for(int i=0; i<ultimaPosicaoVazia; i++){
+      printf("%i\n", fila[i]);
+    }
+  }else{
+    printf("Esta lista esta vazia");
   }
 
 }
 
 int desenfileirar(){
 
-  int removido = fila[0];
+  if(!vazia()){
+    int removido = fila[0];
 
-  for(int i=0; i < TAM_FILA-1; i++){  
-    fila[i] = fila[i+1];
+    for(int i=0; i < TAM_FILA-1; i++){  
+      fila[i] = fila[i+1];
+    }
+
+    ultimaPosicaoVazia--;
+
+    return removido;
+  }else{
+    printf("Esta lista esta vazia");
   }
-
-  ultimaPosicaoVazia--;
-
-  return removido;
-  
 }
 
 int vazia(){
@@ -56,4 +66,17 @@ int cheia(){
 
 }
 
+void esvaziarLista(){
 
+  if(!vazia()){  
+    for(int i=0; i<TAM_FILA; i++){
+      fila[i] = 0;
+    }
+
+    ultimaPosicaoVazia = 0;
+
+    printf("Lista Vazia!");
+  }else{
+    printf("Esta lista ja esta Vazia!");
+  }
+}
